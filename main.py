@@ -1,5 +1,6 @@
 import hashlib
 import requests
+import uvicorn
 
 from fastapi import FastAPI, Request, HTTPException
 import multipart
@@ -207,5 +208,5 @@ async def lobbyRoomDel(req: Request, lobby_id: str):
         raise HTTPException(status_code=403, detail="Action forbidden")
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=50001, reload=True)
 
